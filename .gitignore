@@ -38,10 +38,10 @@ build/
 .DS_Store
 
 ### '.idea' directory ###
-.idea
+.idea/
 
 ### log directory ###
-logs
+logs/
 
 ### '.properties' files ###
 **/cognito.properties
