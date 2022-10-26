@@ -36,3 +36,17 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### '.idea' directory ###
+.idea
+
+### log directory ###
+logs
+
+### '.properties' files ###
+**/cognito.properties
+**/log4j2.properties
+**/database.properties
+
+### hibernate 'cfg.xml' files ###
+**/hibernate.cfg.xml
