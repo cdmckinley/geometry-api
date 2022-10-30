@@ -1,4 +1,4 @@
-# Team resume
+# The Tri-Hards Team Resume
 
 ### Austin Mussey
 
