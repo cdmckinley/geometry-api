@@ -1,0 +1,5 @@
+### 10/25/22
+We met via Teams at 6 pm for our initial team project meetup. We talked about creating a team resume and team charter. Craig created a repo on his local machine to start with, will push it to github once we hear back from Paula. Austin is working on creating the Team resume and charter/ground rules. I am keeping the journal. We still need to decide on what we are going to build and work from there to create a problem statement. We decided to meet once a week and our next meeting is set for 11/01/22 at 6 pm.
+
+### 10/31/22
+We met via Teams at 1 pm to determine our project topic, problem statement, and project plan. We worked on givng our team a name, updated our team resume, completed our problem statement and project plan. We pushed it to github for review and feedback from Paula.
