@@ -2,22 +2,28 @@
 
 ### Week 9
 - [x] Select project topic
-- [x] Create project repository and structure and push to GitHub
-- [x] Add link to list of projects in the student repo
-- [x] Determine which API will be used
+- [x] Create Team resume and Charter
 - [x] Develop problem statement
+- [x] Meet the team
+- [x] Create project repository and structure and push to GitHub
+- [x] Develop a project plan
+- [x] Create issue in GitHub
 
 ### Week 10
-- [x] Begin writing user stories
-- [x] Develop wireframes for the application screens
-- [x] Write project plan
+- [ ] Review feedback from Paula
+- [ ] Design Project structure
+- [ ] Write code for solving a set of pre-defined equations
+- [ ] Develop tests for our programming class
+- [ ] Update weekly log
+- [ ] Update dependencies (as needed)
 
 ### Week 11
-- [x] Begin writing user stories
-- [x] Develop wireframes for the application screens
-- [x] Write project plan
+- [ ] Design data model
+- [ ] Design controller
+- [ ] Update dependencies (as needed)
+- [ ] Update weekly log
 
 ### Week 12
-- [x] Begin writing user stories
-- [x] Develop wireframes for the application screens
-- [x] Write project plan
+- [ ] Create user documentation
+- [ ] Add tests
+- [ ] Update weekly log
