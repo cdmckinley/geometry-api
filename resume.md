@@ -52,18 +52,19 @@ Can explain pieces of technology well enough to give someone a surface-level und
 
 I am more of a listener.
 
-Detail-oriented and like to follow directions.  
+I am detail-oriented and like to follow directions.  
 
-A thinker rather than a talker.
+I am a thinker rather than a talker.
 
-Organized, okay with numbers and data, not very comfortable with stats.
+I am organized and comfortable with numbers and data.
 
 I am okay with creating slides.
 
 I can handle criticism.
 
-I have not served as a tech lead or a project manager and I do not work in IT currently.
-
-I don't have any experience working with APIs and will need some refresher on MVC.
-
 I can speak more than one language.
+
+I have somewhat experience in explaining/training. (my current job as teller requires me to train newer tellers.)
+
+I have been told that I am patient and calm in any situation.
+
