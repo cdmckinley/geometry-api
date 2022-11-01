@@ -1,19 +1,19 @@
 package org.example.trihards.geometry2d;
 
 /**
- * The interface for 2D polygons.
+ * The interface for 2D shapes.
  */
-public interface Polygon {
+public interface Shape {
 
     /**
-     * The perimeter of the polygon
+     * The perimeter of the shape
      *
      * @return the perimeter
      */
     int perimeter();
 
     /**
-     * The area of the polygon
+     * The area of the shape
      *
      * @return the area
      */
