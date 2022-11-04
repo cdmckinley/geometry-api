@@ -10,12 +10,12 @@ public interface Shape {
      *
      * @return the perimeter
      */
-    int perimeter();
+    double perimeter();
 
     /**
      * The area of the shape
      *
      * @return the area
      */
-    int area();
+    double area();
 }

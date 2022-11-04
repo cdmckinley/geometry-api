@@ -37,7 +37,7 @@ public class Parallelogram implements Shape {
      * calculates the perimeter of the parallelogram
      * @return the perimeter
      */
-    public int perimeter() {
+    public double perimeter() {
         return 2 * (length + width);
     }
 
@@ -45,7 +45,7 @@ public class Parallelogram implements Shape {
      * calculates the area of the parallelogram
      * @return the area
      */
-    public int area() {
+    public double area() {
         return length * width;
     }
 }
