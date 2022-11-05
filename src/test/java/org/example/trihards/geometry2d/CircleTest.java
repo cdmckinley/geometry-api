@@ -4,22 +4,26 @@ import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO JavaDocs
-// TODO If the result is different than expected by less than 0.01, we should probably replace the expected results in that case
-
+/**
+ * The tests for Circle class.
+ */
 public class CircleTest {
 
+    /**
+     * Tests perimeter calculation of a circle.
+     */
     @Test
-    public void testPerimeter() {
-        int radius = 4;
-        // TODO create a circle with that radius
-        assertEquals(25.132741228718345907701147066236, 0); // Replace th 0 with the instantiated shape's perimeter method
+    public void calculatePerimeterSuccess() {
+        Circle circle = new Circle(4);
+        assertEquals(25.132741228718345907701147066236, circle.perimeter());
     }
 
+    /**
+     * Tests area calculation of a circle.
+     */
     @Test
-    public void testArea() {
-        int radius = 4;
-        // TODO create a circle with that radius
-        assertEquals(50.265482457436691815402294132472, 0); // Replace th 0 with the instantiated shape's area method
+    public void calculateAreaSuccess() {
+        Circle circle = new Circle(4);
+        assertEquals(50.265482457436691815402294132472, circle.area());
     }
 }

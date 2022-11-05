@@ -4,23 +4,27 @@ import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * The tests for Triangle class.
+ */
 // TODO JavaDocs
 public class TriangleTest {
 
+    /**
+     * Tests perimeter calculation of a triangle.
+     */
     @Test
-    public void testPerimeter() {
-        int sideA = 7;
-        int sideB = 8;
-        int sideC = 9;
-        // TODO create a triangle with those side lengths
-        assertEquals(24, 0); // replace 0 with the triangle's perimeter method
+    public void calculatePerimeterSuccess() {
+        Triangle triangle = new Triangle(7,8,9);
+        assertEquals(24, triangle.perimeter());
     }
 
+    /**
+     * Tests area calculation of a triangle.
+     */
     @Test
-    public void testArea() {
-        int height = 7;
-        int width = 4;
-        // TODO create a triangle with that height and width
-        assertEquals(14, 0); // replace 0 with triangle's area method
+    public void calculateAreaSuccess() {
+        Triangle triangle = new Triangle(7,4);
+        assertEquals(14, triangle.area());
     }
 }
