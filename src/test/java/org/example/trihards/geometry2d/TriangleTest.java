@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * The tests for Triangle class.
  */
-// TODO JavaDocs
 public class TriangleTest {
 
     /**
