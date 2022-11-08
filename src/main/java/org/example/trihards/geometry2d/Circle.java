@@ -3,16 +3,12 @@ package org.example.trihards.geometry2d;
 /**
  * The Circle class that implements shape interface to calculate perimeter and area.
  */
-public class Circle implements Shape{
-    /**
-     * The Pi.
-     */
-    static final double PI = Math.PI;
+public class Circle implements Shape {
 
     /**
      * The Radius.
      */
-    public double radius;
+    private double radius;
 
     /**
      * Instantiates a new Circle.
@@ -30,7 +26,7 @@ public class Circle implements Shape{
     @Override
     public double perimeter() {
 
-        return 2 * PI * radius;
+        return 2 * Math.PI * radius;
     }
 
     /**
@@ -39,7 +35,7 @@ public class Circle implements Shape{
      */
     @Override
     public double area() {
-        return PI * radius * radius;
+        return Math.PI * Math.pow(radius, 2);
     }
 
 }
