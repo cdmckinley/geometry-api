@@ -5,33 +5,18 @@ package org.example.trihards.geometry2d;
  */
 public class Trapezoid implements Shape{
     /**
-     * The Base one.
+     * The base sides, or the two parallel sides.
      */
-    public double baseOne;
+    private double[] bases = new double[2];
+
     /**
-     * The Base two.
+     * The sides.
      */
-    public double baseTwo;
-    /**
-     * The Side one.
-     */
-    public double sideOne;
-    /**
-     * The Side two.
-     */
-    public double sideTwo;
-    /**
-     * The Side three.
-     */
-    public double sideThree;
-    /**
-     * The Side four.
-     */
-    public double sideFour;
+    private double[] sides = new double[4];
     /**
      * The Height.
      */
-    public double height;
+    private double height;
 
     /**
      * Instantiates a new Trapezoid.
@@ -42,10 +27,10 @@ public class Trapezoid implements Shape{
      * @param sideFour  the side four
      */
     public Trapezoid(double sideOne, double sideTwo, double sideThree, double sideFour) {
-        this.sideOne = sideOne;
-        this.sideTwo = sideTwo;
-        this.sideThree = sideThree;
-        this.sideFour = sideFour;
+        this.sides[0] = sideOne;
+        this.sides[1] = sideTwo;
+        this.sides[2] = sideThree;
+        this.sides[3] = sideFour;
     }
 
     /**
@@ -56,8 +41,8 @@ public class Trapezoid implements Shape{
      * @param height  the height
      */
     public Trapezoid(double baseOne, double baseTwo, double height) {
-        this.baseOne = baseOne;
-        this.baseTwo = baseTwo;
+        this.bases[0] = baseOne;
+        this.bases[1] = baseTwo;
         this.height = height;
     }
 
@@ -68,7 +53,7 @@ public class Trapezoid implements Shape{
      */
     @Override
     public double perimeter() {
-        return sideOne + sideTwo + sideThree + sideFour;
+        return sides[0] + sides[1] + sides[2] + sides[3];
     }
 
     /**
@@ -77,6 +62,6 @@ public class Trapezoid implements Shape{
      */
     @Override
     public double area() {
-        return 0.5 * (baseOne + baseTwo) * height;
+        return 0.5 * (bases[0] + bases[1]) * height;
     }
 }
