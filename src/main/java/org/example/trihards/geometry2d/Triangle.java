@@ -4,26 +4,20 @@ package org.example.trihards.geometry2d;
  * The Triangle class that implements shape interface to calculate perimeter and area.
  */
 public class Triangle implements Shape{
+
     /**
-     * The Side one.
+     * The sides of the triangle
      */
-    public double sideOne;
-    /**
-     * The Side two.
-     */
-    public double sideTwo;
-    /**
-     * The Side three.
-     */
-    public double sideThree;
+    private double[] sides = new double[3];
+
     /**
      * The Base.
      */
-    public double base;
+    private double base;
     /**
      * The Height.
      */
-    public double height;
+    private double height;
 
     /**
      * Instantiates a new Triangle.
@@ -33,9 +27,9 @@ public class Triangle implements Shape{
      * @param sideThree the side three
      */
     public Triangle(double sideOne, double sideTwo, double sideThree) {
-        this.sideOne = sideOne;
-        this.sideTwo = sideTwo;
-        this.sideThree = sideThree;
+        this.sides[0] = sideOne;
+        this.sides[1] = sideTwo;
+        this.sides[2] = sideThree;
     }
 
     /**
@@ -56,7 +50,7 @@ public class Triangle implements Shape{
      */
     @Override
     public double perimeter() {
-        return sideOne + sideTwo + sideThree;
+        return sides[0] + sides[1] + sides[2];
     }
 
     /**
