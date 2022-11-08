@@ -8,7 +8,7 @@ public class Circle implements Shape {
     /**
      * The Radius.
      */
-    public double radius;
+    private double radius;
 
     /**
      * Instantiates a new Circle.
