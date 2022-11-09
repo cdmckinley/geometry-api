@@ -8,12 +8,12 @@ public class Parallelogram implements Shape {
     /**
      * The length of the parallelogram.
      */
-    public int length;
+    private double length;
 
     /**
      * The width of the parallelogram.
      */
-    public int width;
+    private double width;
 
     /**
      * Instantiates a new parallelogram.
