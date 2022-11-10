@@ -20,6 +20,13 @@ public class Trapezoid implements Shape{
 
     /**
      * Instantiates a new Trapezoid.
+     */
+    public Trapezoid() {
+
+    }
+
+    /**
+     * Instantiates a new Trapezoid with side lengths.
      *
      * @param sideOne   the side one
      * @param sideTwo   the side two
@@ -27,6 +34,7 @@ public class Trapezoid implements Shape{
      * @param sideFour  the side four
      */
     public Trapezoid(double sideOne, double sideTwo, double sideThree, double sideFour) {
+        this();
         this.sides[0] = sideOne;
         this.sides[1] = sideTwo;
         this.sides[2] = sideThree;
@@ -34,13 +42,14 @@ public class Trapezoid implements Shape{
     }
 
     /**
-     * Instantiates a new Trapezoid.
+     * Instantiates a new Trapezoid with base lengths and distance between bases (height).
      *
      * @param baseOne the base one
      * @param baseTwo the base two
      * @param height  the height
      */
     public Trapezoid(double baseOne, double baseTwo, double height) {
+        this();
         this.bases[0] = baseOne;
         this.bases[1] = baseTwo;
         this.height = height;

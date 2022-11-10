@@ -12,10 +12,18 @@ public class Circle implements Shape {
 
     /**
      * Instantiates a new Circle.
+     */
+    public Circle() {
+
+    }
+
+    /**
+     * Instantiates a new Circle with a radius.
      *
      * @param radius the radius
      */
     public Circle(double radius){
+        this();
         this.radius = radius;
     }
 

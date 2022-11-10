@@ -19,6 +19,10 @@ public class Triangle implements Shape{
      */
     private double height;
 
+    public Triangle() {
+
+    }
+
     /**
      * Instantiates a new Triangle.
      *
@@ -27,6 +31,7 @@ public class Triangle implements Shape{
      * @param sideThree the side three
      */
     public Triangle(double sideOne, double sideTwo, double sideThree) {
+        this();
         this.sides[0] = sideOne;
         this.sides[1] = sideTwo;
         this.sides[2] = sideThree;
@@ -39,6 +44,7 @@ public class Triangle implements Shape{
      * @param height the height
      */
     public Triangle(double base, double height) {
+        this();
         this.base = base;
         this.height = height;
     }
