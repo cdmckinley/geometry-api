@@ -3,3 +3,6 @@ We met via Teams at 6 pm for our initial team project meetup. We talked about cr
 
 ### 10/31/22
 We met via Teams at 1 pm to determine our project topic, problem statement, and project plan. We worked on givng our team a name, updated our team resume, completed our problem statement and project plan. We pushed it to github for review and feedback from Paula.
+
+### 11/01/22
+We met via Teams at 6 pm. We went over feedback from Paula. We determined possible equations and what our request/response call look like. We decided to start working on creating classes and methods required for the program.
