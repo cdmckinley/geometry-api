@@ -60,12 +60,12 @@ public class Geometry2d {
     public Response getResponse(@PathParam("shape") String shapeName, @QueryParam("formula") String formulaType,
                                 @QueryParam("measurements") String measurementsInput) {
         ObjectMapper mapper = new ObjectMapper();
-        Object responseObject;
+        Object responseObject = null;
 
         if (shapeName.equals("help") || shapeName.equals("options")) {
             responseObject = supportedShapesList;
         } else {
-            double[] measurements;
+            double[] measurements = null;
             if (measurementsInput != null && !measurementsInput.isBlank()) {
                 try {
                     measurements = mapper.readValue(measurementsInput, double[].class);
