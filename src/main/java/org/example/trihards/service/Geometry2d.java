@@ -121,19 +121,6 @@ public class Geometry2d {
         return Response.status(500).entity(errorMessage).build();
     }
 
-    /**
-     * Determines if a shape is supported
-     *
-     * @param shapeName the name of the desired shape
-     * @return true if the shape is a supported shape, otherwise false
-     */
-    protected boolean shapeIsSupported(String shapeName) {
-        for (String shape : supportedShapesList){
-            if (shape.equals(shapeName.toLowerCase())) return true;
-        }
-        return false;
-    }
-
     protected boolean hasAmountOfMeasurements(List<Double> measurements, int expectedSize) {
         if (measurements != null && measurements.size() == expectedSize) return true;
         return false;
