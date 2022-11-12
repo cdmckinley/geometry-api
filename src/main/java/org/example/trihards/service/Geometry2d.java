@@ -45,8 +45,6 @@ public class Geometry2d {
         supportedShapesList.add("circle");
         supportedShapesList.add("triangle");
         supportedShapesList.add("parallelogram");
-        supportedShapesList.add("rectangle");
-        supportedShapesList.add("square");
         supportedShapesList.add("trapezoid");
     }
 
