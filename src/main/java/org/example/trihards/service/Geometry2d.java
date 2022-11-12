@@ -11,7 +11,9 @@ import org.example.trihards.response.Response2d;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -33,6 +35,8 @@ public class Geometry2d {
     static final String AREA = "area";
 
     static final String ERROR_WRONG_NUMBER_OF_MEASUREMENTS = "The shape name and number of measurements don't match. Please check the documentation to see what data each shape expects.";
+
+    static final String ERROR_UNSUPPORTED_FORMULA = "The formula you're looking for is not supported. Please check the documentation to see what formulas we support.";
 
     /**
      * Instantiates the service, and populates the list of supported shapes.
@@ -58,23 +62,27 @@ public class Geometry2d {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getResponse(@PathParam("shape") String shapeName, @QueryParam("formula") String formulaType,
-                                @QueryParam("measurements") String measurementsInput) {
+                                @QueryParam("measurements") List<String> measurementsInput) {
         ObjectMapper mapper = new ObjectMapper();
         Object responseObject = null;
 
         if (shapeName.equals("help") || shapeName.equals("options")) {
             responseObject = supportedShapesList;
         } else {
-            double[] measurements = null;
-            if (measurementsInput != null && !measurementsInput.isBlank()) {
+            List<Double> measurements = new ArrayList<>();
+            if (measurementsInput != null) {
                 try {
-                    measurements = mapper.readValue(measurementsInput, double[].class);
-                } catch (JsonProcessingException jpe) {
-                    logger.error("Could not read measurements", jpe);
-                    responseObject = "The measurements could not be read. Please use a JSON array of numbers.";
+                    for (String measurement : measurementsInput) {
+                            measurements.add(Double.parseDouble(measurement));
+                    }
+                } catch (NumberFormatException nfe) {
+                    logger.error("There was a problem with the format of the measurements input.", nfe);
+                    measurements = null;
+                } catch (NullPointerException npe) {
+                    logger.error("There was a null measurement provided.", npe);
                 }
             }
-            if (measurements != null) {
+            if (measurements != null && !measurements.isEmpty()) {
                 switch (shapeName) {
                     case "parallelogram":
                         responseObject = parallelogram(formulaType, measurements);
@@ -118,8 +126,8 @@ public class Geometry2d {
         return false;
     }
 
-    protected boolean hasAmountOfMeasurements(double[] measurements, int expectedLength) {
-        if (measurements != null && measurements.length == expectedLength) return true;
+    protected boolean hasAmountOfMeasurements(List<Double> measurements, int expectedSize) {
+        if (measurements != null && measurements.size() == expectedSize) return true;
         return false;
     }
 
@@ -139,20 +147,22 @@ public class Geometry2d {
         return response2d;
     }
 
-    protected Object parallelogram(String formulaType, double[] measurements) {
+    protected Object parallelogram(String formulaType, List<Double> measurements) {
         if (hasAmountOfMeasurements(measurements, 2)) {
-            Shape shape = new Parallelogram(measurements[0], measurements[1]);
+            Shape shape = new Parallelogram(measurements.get(0), measurements.get(1));
             return processResponse(shape, formulaType);
         } else return ERROR_WRONG_NUMBER_OF_MEASUREMENTS;
     }
 
-    protected Object triangle(String formulaType, double[] measurements) {
-        if (hasAmountOfMeasurements(measurements, 3) && formulaType.equals("perimeter")) {
-            Shape shape = new Triangle(measurements[0], measurements[1], measurements[2]);
+    protected Object triangle(String formulaType, List<Double> measurements) {
+        if (hasAmountOfMeasurements(measurements, 3) && formulaType.equals(PERIMETER)) {
+            Shape shape = new Triangle(measurements.get(0), measurements.get(1), measurements.get(2));
             return processResponse(shape, formulaType);
-        } else if (hasAmountOfMeasurements(measurements, 2) && formulaType.equals("area")) {
-            Shape shape = new Triangle(measurements[0], measurements[1]);
+        } else if (hasAmountOfMeasurements(measurements, 2) && formulaType.equals(AREA)) {
+            Shape shape = new Triangle(measurements.get(0), measurements.get(1));
             return processResponse(shape, formulaType);
-        } else return ERROR_WRONG_NUMBER_OF_MEASUREMENTS;
+        } else if (formulaType.equals(PERIMETER) || formulaType.equals(AREA)) {
+            return ERROR_WRONG_NUMBER_OF_MEASUREMENTS;
+        } else return ERROR_UNSUPPORTED_FORMULA;
     }
 }
