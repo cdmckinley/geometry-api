@@ -94,6 +94,12 @@ public class Geometry2d {
                     case "triangle":
                         responseObject = triangle(formulaType, measurements);
                         break;
+                    case "circle":
+                        responseObject = circle(formulaType, measurements);
+                        break;
+                    case "trapezoid":
+                        responseObject = trapezoid(formulaType, measurements);
+                        break;
                     default:
                         responseObject = "Shape '" + shapeName +
                                 "' is not supported. Pass 'help' or 'options' as a shape to see a list of supported shapes.";
@@ -164,6 +170,26 @@ public class Geometry2d {
             return processResponse(shape, formulaType);
         } else if (hasAmountOfMeasurements(measurements, 2) && formulaType.equals(AREA)) {
             Shape shape = new Triangle(measurements.get(0), measurements.get(1));
+            return processResponse(shape, formulaType);
+        } else if (formulaType.equals(PERIMETER) || formulaType.equals(AREA)) {
+            return ERROR_WRONG_NUMBER_OF_MEASUREMENTS;
+        } else return ERROR_UNSUPPORTED_FORMULA;
+    }
+
+    protected Object circle(String formulaType, List<Double> measurements) {
+        if (hasAmountOfMeasurements(measurements, 1)) {
+            Shape shape = new Circle(measurements.get(0));
+            return processResponse(shape, formulaType);
+        } else return ERROR_WRONG_NUMBER_OF_MEASUREMENTS;
+    }
+
+    protected Object trapezoid(String formulaType, List<Double> measurements) {
+        if (hasAmountOfMeasurements(measurements, 4) && formulaType.equals(PERIMETER)) {
+            Shape shape = new Trapezoid(measurements.get(0), measurements.get(1), measurements.get(2),
+                    measurements.get(3));
+            return processResponse(shape, formulaType);
+        } else if (hasAmountOfMeasurements(measurements, 3) && formulaType.equals(AREA)) {
+            Shape shape = new Trapezoid(measurements.get(0), measurements.get(1), measurements.get(2));
             return processResponse(shape, formulaType);
         } else if (formulaType.equals(PERIMETER) || formulaType.equals(AREA)) {
             return ERROR_WRONG_NUMBER_OF_MEASUREMENTS;
