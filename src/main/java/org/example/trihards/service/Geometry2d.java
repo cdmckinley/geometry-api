@@ -83,6 +83,7 @@ public class Geometry2d {
                     measurements = null;
                 } catch (NullPointerException npe) {
                     logger.error("There was a null measurement provided.", npe);
+                    measurements = null;
                 }
             }
             if (measurements != null && !measurements.isEmpty()) {
