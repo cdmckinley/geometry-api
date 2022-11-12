@@ -55,14 +55,14 @@ public class Geometry2d {
      *
      * @param shapeName         the name of the shape to instantiate
      * @param formulaType       the formula to find the solution to (perimeter or area)
-     * @param measurementsInput the measurements of the shape
+     * @param measurementsInputs the measurements of the shape
      * @return the solution, list of supported shapes, or error message
      */
     @Path("/{shape}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getResponse(@PathParam("shape") String shapeName, @QueryParam("formula") String formulaType,
-                                @QueryParam("measurements") List<String> measurementsInput) {
+                                @QueryParam("measurements") List<String> measurementsInputs) {
         ObjectMapper mapper = new ObjectMapper();
         Object responseObject = null;
 
@@ -70,10 +70,13 @@ public class Geometry2d {
             responseObject = supportedShapesList;
         } else {
             List<Double> measurements = new ArrayList<>();
-            if (measurementsInput != null) {
+            if (measurementsInputs != null) {
                 try {
-                    for (String measurement : measurementsInput) {
-                            measurements.add(Double.parseDouble(measurement));
+                    for (String measurementsInput : measurementsInputs) {
+                        String[] measurementStrings = measurementsInput.split(",");
+                        for (String measurementString : measurementStrings) {
+                            measurements.add(Double.parseDouble(measurementString));
+                        }
                     }
                 } catch (NumberFormatException nfe) {
                     logger.error("There was a problem with the format of the measurements input.", nfe);
