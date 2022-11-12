@@ -30,12 +30,24 @@ public class Geometry2d {
      */
     protected Set<String> supportedShapesList = new HashSet<>();
 
+    /**
+     * The Perimeter.
+     */
     static final String PERIMETER = "perimeter";
 
+    /**
+     * The Area.
+     */
     static final String AREA = "area";
 
+    /**
+     * The Error wrong number of measurements.
+     */
     static final String ERROR_WRONG_NUMBER_OF_MEASUREMENTS = "The shape name and number of measurements don't match. Please check the documentation to see what data each shape expects.";
 
+    /**
+     * The Error unsupported formula.
+     */
     static final String ERROR_UNSUPPORTED_FORMULA = "The formula you're looking for is not supported. Please check the documentation to see what formulas we support.";
 
     /**
@@ -51,8 +63,8 @@ public class Geometry2d {
     /**
      * Gets a response, either an error, help message, or solution.
      *
-     * @param shapeName         the name of the shape to instantiate
-     * @param formulaType       the formula to find the solution to (perimeter or area)
+     * @param shapeName          the name of the shape to instantiate
+     * @param formulaType        the formula to find the solution to (perimeter or area)
      * @param measurementsInputs the measurements of the shape
      * @return the solution, list of supported shapes, or error message
      */
@@ -121,11 +133,25 @@ public class Geometry2d {
         return Response.status(500).entity(errorMessage).build();
     }
 
+    /**
+     * Returns true if a measurements List has an amount of elements.
+     *
+     * @param measurements the measurements List
+     * @param expectedSize the expected size
+     * @return True if the measurements List has the expected number of elements.
+     */
     protected boolean hasAmountOfMeasurements(List<Double> measurements, int expectedSize) {
         if (measurements != null && measurements.size() == expectedSize) return true;
         return false;
     }
 
+    /**
+     * Generates JSON from a Shape and 'formulaType' query parameter.
+     *
+     * @param shape       the shape
+     * @param formulaType the formula type
+     * @return the JSON object, or a JSON String error message if a formula type isn't supported.
+     */
     protected Object processResponse(Shape shape, String formulaType) {
         Response2d response2d = new Response2d();
         if (formulaType != null && formulaType.equals(PERIMETER)) {
@@ -142,6 +168,13 @@ public class Geometry2d {
         return response2d;
     }
 
+    /**
+     * Instantiates a Parallelogram from a height and width, then processes the JSON.
+     *
+     * @param formulaType  the formula type
+     * @param measurements the measurements of the Shape
+     * @return the JSON or an error message
+     */
     protected Object parallelogram(String formulaType, List<Double> measurements) {
         if (hasAmountOfMeasurements(measurements, 2)) {
             Shape shape = new Parallelogram(measurements.get(0), measurements.get(1));
@@ -149,6 +182,13 @@ public class Geometry2d {
         } else return ERROR_WRONG_NUMBER_OF_MEASUREMENTS;
     }
 
+    /**
+     * Instantiates a Triangle from 3 sides for perimeter, or a height and width for area, then processes the JSON.
+     *
+     * @param formulaType  the formula type
+     * @param measurements the measurements of the Shape
+     * @return the JSON or an error message
+     */
     protected Object triangle(String formulaType, List<Double> measurements) {
         if (hasAmountOfMeasurements(measurements, 3) && formulaType.equals(PERIMETER)) {
             Shape shape = new Triangle(measurements.get(0), measurements.get(1), measurements.get(2));
@@ -161,6 +201,13 @@ public class Geometry2d {
         } else return ERROR_UNSUPPORTED_FORMULA;
     }
 
+    /**
+     * Instantiates a Circle from a radius, then processes the JSON.
+     *
+     * @param formulaType  the formula type
+     * @param measurements the measurements of the Shape
+     * @return the JSON or an error message
+     */
     protected Object circle(String formulaType, List<Double> measurements) {
         if (hasAmountOfMeasurements(measurements, 1)) {
             Shape shape = new Circle(measurements.get(0));
@@ -168,6 +215,13 @@ public class Geometry2d {
         } else return ERROR_WRONG_NUMBER_OF_MEASUREMENTS;
     }
 
+    /**
+     * Instantiates a Trapezoid from 4 sides for a perimeter, or 2 parallel bases and a height, then processes the JSON.
+     *
+     * @param formulaType  the formula type
+     * @param measurements the measurements of the Shape
+     * @return the JSON or an error message
+     */
     protected Object trapezoid(String formulaType, List<Double> measurements) {
         if (hasAmountOfMeasurements(measurements, 4) && formulaType.equals(PERIMETER)) {
             Shape shape = new Trapezoid(measurements.get(0), measurements.get(1), measurements.get(2),
