@@ -17,10 +17,8 @@ public class GeometryApplication extends Application {
 
     @Override
     public Set<Class<?>> getClasses() {
-        logger.debug("Getting classes...");
         Set<Class<?>> hashset = new HashSet<>();
         hashset.add(Geometry2d.class);
-        logger.debug("Returning classes...");
         return hashset;
     }
 }
