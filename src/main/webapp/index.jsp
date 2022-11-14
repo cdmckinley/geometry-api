@@ -9,14 +9,14 @@
 <h1>Welcome to the TriHards Geometry Service!</h1>
 
 <div id="description">
-    <p>This is where the description will go. This is a simple service designed to help
-        users solve mathmetic equations for multiple 2D shapes.
+    <p>This is a simple service designed to help
+        users solve mathematical equations for multiple 2D shapes.
     </p>
     <p>Designed by: Austin Mussey, Craig McKinley, Sandhya Sharma</p>
 </div>
 
 <div id="guide">
-    <h2>User guide</h2>
+    <h2>Usage</h2>
     <p>This service is designed to solve geometric equations based on the user-entered
         dimensions.
     </p>
@@ -37,9 +37,22 @@
     <ol>
         <li>Add the base URL: /trihards_geometry_api_war/services/2d/</li>
         <li>Enter the shape you want to perform the calculation on</li>
-        <li>Enter which calculation you want to run</li>
+        <li>Enter which calculation you want to run (perimeter or area)</li>
         <li>Depending on the shape and calculation, enter the length of each side.</li>
     </ol>
+
+    <p>Entering measurements:</p>
+    <p>Supply measurements such as the radius, sides, and/or height depending on the shape. Measurements can
+        either be passed in multiple times containing a measurement each time, or multiple measurements separated
+        by commas in passing it once.</p>
+    <ul>
+        <li>Circle: Perimeter and area require 1 radius</li>
+        <li>Triangle: Perimeter requires 3 sides. Area requires 2 measurements: a base side, then the
+            height from that side to the opposite corner.</li>
+        <li>Parallelogram: Perimeter and Area require two sides that form the same angle</li>
+        <li>Trapezoid: Perimeter requires 4 sides. Area requires 3 measurements: 2 parallel base sides,
+            then the height between those sides. Note: The height must come last.</li>
+    </ul>
 </div>
 
 <div id="sample">
