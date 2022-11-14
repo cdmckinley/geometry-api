@@ -1,0 +1,14 @@
+body {
+    background-color: aliceblue;
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+}
+h1 {
+    border: 5px solid black;
+    border-radius: 8px;
+    text-align: center;
+}
+div {
+    font-size: 1em;
+}
