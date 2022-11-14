@@ -27,7 +27,7 @@ public class Parallelogram implements Shape {
      * @param length the length
      * @param width  the width
      */
-    public Parallelogram(int length, int width) {
+    public Parallelogram(double length, double width) {
         this();
         this.length = length;
         this.width = width;
