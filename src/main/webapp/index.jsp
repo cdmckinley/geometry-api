@@ -60,9 +60,9 @@
 <div id="sample">
     <h2>Sample requests</h2>
     <ul>
-        <li>/trihards_geometry_api_war/services/2d/triangle?formula=area&measurements=3&measurements=4</li>
-        <li>/trihards_geometry_api_war/services/2d/triangle?formula=perimeter&measurements=5,4,5</li>
-        <li>/trihards_geometry_api_war/services/2d/circle?measurements=4</li>
+        <li>/services/2d/triangle?formula=area&measurements=3&measurements=4</li>
+        <li>/services/2d/triangle?formula=perimeter&measurements=5,4,5</li>
+        <li>/services/2d/circle?measurements=4</li>
     </ul>
 </div>
 
