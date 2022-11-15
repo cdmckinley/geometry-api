@@ -11,4 +11,7 @@ We met via Teams at 6 pm. We went over feedback from Paula. We determined possib
 Group meeting today to review work completed on the geometric equations. Reviewed unit tests for each of the equations. Test request/response to the service was demonstrated. Discussed and determined changes to be made to how requests and responses should be structured. Started working on the documentation for our service. Established a plan of action to complete remaining work over the weekend.
 
 ### 11/12/22
-API has been coded and structured to properly provide responses. Continuing to work on documentation. Once documentation is completed we plan to deploy to beanstalk. 
+API has been coded and structured to properly provide responses. Continuing to work on documentation. Once documentation is completed we plan to deploy to beanstalk.
+
+## 11/15/22
+We met and made our recording for our presentation.
