@@ -10,20 +10,20 @@
 - [x] Create issue in GitHub
 
 ### Week 10
-- [ ] Review feedback from Paula
-- [ ] Design Project structure
-- [ ] Write code for solving a set of pre-defined equations
-- [ ] Develop tests for our programming class
-- [ ] Update weekly log
-- [ ] Update dependencies (as needed)
+- [xChe] Review feedback from Paula
+- [x] Design Project structure
+- [x] Write code for solving a set of pre-defined equations
+- [x] Develop tests for our programming class
+- [x] Update weekly log
+- [x] Update dependencies (as needed)
 
 ### Week 11
-- [ ] Design data model
-- [ ] Design controller
-- [ ] Update dependencies (as needed)
-- [ ] Update weekly log
+- [x] Design data model
+- [x] Design controller
+- [x] Update dependencies (as needed)
+- [x] Update weekly log
 
 ### Week 12
-- [ ] Create user documentation
-- [ ] Add tests
-- [ ] Update weekly log
+- [x] Create user documentation
+- [x] Add tests
+- [x] Update weekly log
