@@ -6,3 +6,9 @@ We met via Teams at 1 pm to determine our project topic, problem statement, and 
 
 ### 11/01/22
 We met via Teams at 6 pm. We went over feedback from Paula. We determined possible equations and what our request/response call look like. We decided to start working on creating classes and methods required for the program.
+
+### 11/10/22
+Group meeting today to review work completed on the geometric equations. Reviewed unit tests for each of the equations. Test request/response to the service was demonstrated. Discussed and determined changes to be made to how requests and responses should be structured. Started working on the documentation for our service. Established a plan of action to complete remaining work over the weekend.
+
+### 11/12/22
+API has been coded and structured to properly provide responses. Continuing to work on documentation. Once documentation is completed we plan to deploy to beanstalk. 
